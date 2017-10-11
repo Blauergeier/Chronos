@@ -50,18 +50,16 @@ elif args.add:
     time[handle] = 0
     print "[#] Task was added!"
 
-#TODO: Deletion does not work
 elif args.remove:
     user_input = raw_input("[!] Please input the full name or handle of the tasks you want to delete: ")
     for e in names:
         #TODO: Improve code
-        print "e = %s" % e
-        if e is user_input:
-            print "test1"
+        if e == user_input:
             del names[e]
+            del time[e]
             break
-        elif names[e] is user_input:
-            print "test2"
+        elif names[e] == user_input:
+            del time[e]
             del names[e]
             break
     print "[#] Task was removed!"
